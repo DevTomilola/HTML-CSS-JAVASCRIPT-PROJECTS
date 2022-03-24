@@ -24,10 +24,11 @@ function removeLoadingSpinner() {
 // Get Quote from API
 async function getQuote() {
     showLoadingSpinner();
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+    const proxyUrl = 'https://whispering-tor-04671.herokuapp.com/'
     const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
     try {
-        const response = await fetch(proxyUrl + apiUrl);
+        const response = await fetch(proxyUrl + apiUrl, {
+        });
         const data = await response.json()
         if (data.quoteAuthor === '') {
             authorText.innerText = 'Unknown';
